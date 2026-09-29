@@ -1,4 +1,3 @@
 *.out
-tester/
 tester.c
 *.pdf
