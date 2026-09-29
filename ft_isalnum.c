@@ -6,11 +6,11 @@
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/26 16:17:09 by reiascan          #+#    #+#             */
-/*   Updated: 2026/09/26 17:19:36 by reiascan         ###   ########.fr       */
+/*   Updated: 2026/09/28 19:49:12 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char c)
+int	ft_isalnum(int c)
 {
 	return ((c >= '0' && c <= '9')
 		|| (c >= 'a' && c <= 'z')

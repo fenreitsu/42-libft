@@ -4,11 +4,16 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
 
-/d	NAME = libft.a
+NAME = libft.a
 
-SRC = ?
+SRC = ft_isalpha.c \
+	ft_isdigit.c \
+	ft_isalnum.c \
+	ft_isascii.c \
+	ft_isprint.c \
+	ft_strlen.c \
 
-OBJS = $(SRC:.C=.0)
+OBJS = $(SRC:.c=.o)
 
 all = $(NAME)
 
@@ -26,4 +31,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: al fclean clean re
+.PHONY: all fclean clean re
