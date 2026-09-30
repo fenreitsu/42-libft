@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tester_strlen.c                                    :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/26 18:00:41 by reiascan          #+#    #+#             */
-/*   Updated: 2026/09/30 16:55:32 by reiascan         ###   ########.fr       */
+/*   Created: 2026/09/30 14:00:04 by reiascan          #+#    #+#             */
+/*   Updated: 2026/09/30 16:02:39 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-void	ft_putnbr(int n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	char	digit;
+	size_t	i;
 
-	if (n == -2147483648)
-		write(1, "-2147483648", 11);
-	else if (n < 0)
+	i = 0;
+	while (i < size - 1 && src[i])
 	{
-		n *= -1;
-		write(1, "-", 1);
-		ft_putnbr(n);
+		dst[i] = src[i];
+		i++;
 	}
-	else
-	{
-		digit = (n % 10) + 48;
-		if (n / 10 != 0)
-			ft_putnbr((n / 10));
-		write(1, &digit, 1);
-	}
-}
-
-int	main(void)
-{
-	char	*s;
-
-	s = "Campus 42 $&/()";
-	ft_putnbr(ft_strlen(s));
-	return (0);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }

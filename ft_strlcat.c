@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tester_strlen.c                                    :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/26 18:00:41 by reiascan          #+#    #+#             */
-/*   Updated: 2026/09/30 16:55:32 by reiascan         ###   ########.fr       */
+/*   Created: 2026/09/30 16:55:55 by reiascan          #+#    #+#             */
+/*   Updated: 2026/09/30 20:03:44 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
+#include <stdio.h>
 
-void	ft_putnbr(int n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char	digit;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
-	if (n == -2147483648)
-		write(1, "-2147483648", 11);
-	else if (n < 0)
+	i = ft_strlen(dst);
+	k = i;
+	j = 0;
+	while ((j < (size - 1)) && src[j])
 	{
-		n *= -1;
-		write(1, "-", 1);
-		ft_putnbr(n);
+		dst[i] = src[j];
+		i++;
+		j++;
 	}
-	else
-	{
-		digit = (n % 10) + 48;
-		if (n / 10 != 0)
-			ft_putnbr((n / 10));
-		write(1, &digit, 1);
-	}
-}
-
-int	main(void)
-{
-	char	*s;
-
-	s = "Campus 42 $&/()";
-	ft_putnbr(ft_strlen(s));
-	return (0);
+	dst[i] = '\0';
+	return (k + ft_strlen(src));
 }

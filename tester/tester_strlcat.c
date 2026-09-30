@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tester_strlen.c                                    :+:      :+:    :+:   */
+/*   tester_strlcat.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/26 18:00:41 by reiascan          #+#    #+#             */
-/*   Updated: 2026/09/30 16:55:32 by reiascan         ###   ########.fr       */
+/*   Created: 2026/09/30 16:55:54 by reiascan          #+#    #+#             */
+/*   Updated: 2026/09/30 20:03:19 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-
-void	ft_putnbr(int n)
-{
-	char	digit;
-
-	if (n == -2147483648)
-		write(1, "-2147483648", 11);
-	else if (n < 0)
-	{
-		n *= -1;
-		write(1, "-", 1);
-		ft_putnbr(n);
-	}
-	else
-	{
-		digit = (n % 10) + 48;
-		if (n / 10 != 0)
-			ft_putnbr((n / 10));
-		write(1, &digit, 1);
-	}
-}
+#include <stdio.h>
 
 int	main(void)
 {
+	char	d[50] = "Ultimo";
 	char	*s;
 
-	s = "Campus 42 $&/()";
-	ft_putnbr(ft_strlen(s));
+	s = "Primero";
+	
+	printf("Origen (Antes): %s | Length: %zu\n", s, ft_strlen(s));
+	printf("Destino (Antes): %s | Length: %zu\n", d, ft_strlen(d));
+	printf("Destino (Despues): %s | Length: %zu\n", d, ft_strlcat(d, s, 2));
 	return (0);
 }
