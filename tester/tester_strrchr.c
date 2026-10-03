@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   tester_strrchr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/30 16:55:55 by reiascan          #+#    #+#             */
-/*   Updated: 2026/10/03 19:40:30 by reiascan         ###   ########.fr       */
+/*   Created: 2026/10/03 17:36:10 by reiascan          #+#    #+#             */
+/*   Updated: 2026/10/03 20:49:47 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 #include <stdio.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	main(void)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	int		i;
+	char	*word;
 
-	k = ft_strlen(dst);
-	i = k;
-	j = 0;
-	if (size <= k)
-		return (size + ft_strlen(src));
-	while ((i < (size - 1)) && src[j])
-	{
-		dst[i] = src[j];
-		i++;
-		j++;
-	}
-	dst[i] = '\0';
-	return (k + ft_strlen(src));
+	i = '\0';
+	word = "Versiones";
+	printf("Palabras: %s | ", word);
+	if  (i != '\0')
+		printf("La ultima coincidencia debe ser: %c\n", i);
+	else
+		printf("La ultima coincidencia debe ser: '\\0'\n");
+	if (ft_strrchr(word, i) == NULL)
+		printf("NULL");
+	else
+		printf("Desde la ultima posicion de la letra indicada: %s", ft_strrchr(word, i));
+	return (0);
 }

@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   tester_strchr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/30 16:55:55 by reiascan          #+#    #+#             */
-/*   Updated: 2026/10/03 19:40:30 by reiascan         ###   ########.fr       */
+/*   Created: 2026/10/03 13:21:44 by reiascan          #+#    #+#             */
+/*   Updated: 2026/10/03 19:10:26 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 #include <stdio.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	main(void)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	int		i;
+	char	*word;
 
-	k = ft_strlen(dst);
-	i = k;
-	j = 0;
-	if (size <= k)
-		return (size + ft_strlen(src));
-	while ((i < (size - 1)) && src[j])
-	{
-		dst[i] = src[j];
-		i++;
-		j++;
-	}
-	dst[i] = '\0';
-	return (k + ft_strlen(src));
+	i = 'z';
+	word = "Hola";
+	printf("Palabra: %s | ", word);
+	if (i != '\0')
+		printf("El 1º caracter encontrado debe ser: %c\n", i);
+	else
+		printf("El 1º caracter encontrado debe ser: '\\0'\n");
+	if (ft_strchr(word, i) == NULL)
+		printf("NULL");
+	else
+		printf("Desde la letra indicada: %s", ft_strchr(word, i));
+	return (0);
 }

@@ -18,10 +18,14 @@ SRC = ft_isalpha.c \
 	ft_memmove.c \
 	ft_strlcpy.c \
 	ft_strlcat.c \
+	ft_toupper.c \
+	ft_tolower.c \
+	ft_strchr.c \
+	ft_strrchr.c \
 
 OBJS = $(SRC:.c=.o)
 
-all = $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)

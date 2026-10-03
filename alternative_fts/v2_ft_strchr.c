@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   v2_ft_strchr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/30 16:55:55 by reiascan          #+#    #+#             */
-/*   Updated: 2026/10/03 19:40:30 by reiascan         ###   ########.fr       */
+/*   Created: 2026/10/03 20:59:56 by reiascan          #+#    #+#             */
+/*   Updated: 2026/10/03 21:01:21 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*v2_ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	int	i;
 
-	k = ft_strlen(dst);
-	i = k;
-	j = 0;
-	if (size <= k)
-		return (size + ft_strlen(src));
-	while ((i < (size - 1)) && src[j])
+	i = 0;
+	while (s[i])
 	{
-		dst[i] = src[j];
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
 		i++;
-		j++;
 	}
-	dst[i] = '\0';
-	return (k + ft_strlen(src));
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
+	return (NULL);
 }

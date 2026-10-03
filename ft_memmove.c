@@ -6,7 +6,7 @@
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 16:24:13 by reiascan          #+#    #+#             */
-/*   Updated: 2026/09/30 13:51:59 by reiascan         ###   ########.fr       */
+/*   Updated: 2026/10/03 20:00:45 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const unsigned char	*ptrs;
 	unsigned char		*ptrd;
 
-	ptrs = src;
-	ptrd = dest;
+	ptrs = (unsigned char *)src;
+	ptrd = (unsigned char *)dest;
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	if (dest > src)
 	{
 		i = n;
