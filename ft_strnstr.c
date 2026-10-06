@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tester_strlcpy.c                                   :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/30 14:36:25 by reiascan          #+#    #+#             */
-/*   Updated: 2026/10/04 17:36:04 by reiascan         ###   ########.fr       */
+/*   Created: 2026/10/06 11:59:33 by reiascan          #+#    #+#             */
+/*   Updated: 2026/10/06 16:17:13 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdio.h>
+#include "libft.h"
 
-int	main(void)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char  *arr1;
-	char  arr2[4];
-	char  *tmp;
+	size_t	i;
+	size_t	j;
+	size_t	start_l;
 
-	arr1 = "Hola";
-	printf("Antes: ");
-	tmp = arr1;
-	while (*tmp)
+	i = 0;
+	if (*little == '\0')
+		return ((char *)big);
+	while (i < len && big[i])
 	{
-		printf("%c", *tmp);
-		tmp++;
+		start_l = i;
+		j = 0;
+		while (little[j] == big[i] && little[j] && i < len)
+		{
+			i++;
+			j++;
+		}
+		if (little[j] == '\0')
+			return ((char *)&big[start_l]);
+		i = start_l + 1;
 	}
-	printf("\nLongitud arr1: %zu\n", ft_strlen(arr1));
-	printf("Longitud  %zu\n", ft_strlcpy(arr2, arr1, 2));
-	printf("Despues: ");
-	tmp = arr2;
-	while (*tmp)
-	{
-		printf("%c", *tmp);
-		tmp++;
-	}
-	printf("\n");
-	return (0);
+	return (NULL);
 }
