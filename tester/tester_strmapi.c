@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   tester_strmapi.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/06 11:59:33 by reiascan          #+#    #+#             */
-/*   Updated: 2026/10/07 16:20:17 by reiascan         ###   ########.fr       */
+/*   Created: 2026/10/10 11:39:23 by reiascan          #+#    #+#             */
+/*   Updated: 2026/10/10 16:05:52 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
+#include <stdio.h>
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	change_char(unsigned int i, char c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	start_l;
+	return (c + i);
+}	
 
-	i = 0;
-	if (*little == '\0')
-		return ((char *)big);
-	while (i < len && big[i])
-	{
-		start_l = i;
-		j = 0;
-		while (little[j] == big[i] && little[j] && i < len)
-		{
-			i++;
-			j++;
-		}
-		if (little[j] == '\0')
-			return ((char *)&big[start_l]);
-		i = start_l + 1;
-	}
-	return (NULL);
+int	main(void)
+{
+
+	char				*str;
+	char				*n_str;
+
+	str = "Hola";
+	n_str = ft_strmapi(str, change_char);
+	printf("%s", n_str);
+	return (0);
 }

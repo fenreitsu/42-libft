@@ -1,38 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   tester_itoa.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/06 11:59:33 by reiascan          #+#    #+#             */
-/*   Updated: 2026/10/07 16:20:17 by reiascan         ###   ########.fr       */
+/*   Created: 2026/10/10 11:41:04 by reiascan          #+#    #+#             */
+/*   Updated: 2026/10/10 13:29:11 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
+#include <stdio.h>
+#include <unistd.h>
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	ft_putstr(char  *str)
 {
-	size_t	i;
-	size_t	j;
-	size_t	start_l;
+	int	i;
 
 	i = 0;
-	if (*little == '\0')
-		return ((char *)big);
-	while (i < len && big[i])
+	while (str[i])
 	{
-		start_l = i;
-		j = 0;
-		while (little[j] == big[i] && little[j] && i < len)
-		{
-			i++;
-			j++;
-		}
-		if (little[j] == '\0')
-			return ((char *)&big[start_l]);
-		i = start_l + 1;
+		write (1, &str[i], 1);
+		i++;
 	}
-	return (NULL);
+}
+
+int	main(void)
+{
+	char	*str_number;
+	int	n;
+
+	n = 9;
+	str_number = ft_itoa(n);
+	if (!str_number)
+		ft_putstr("NULL");
+	else
+	{
+		ft_putstr(str_number);
+		printf("\n%zu", ft_strlen(str_number));
+	}
+	free(str_number);
+	return (0);
 }

@@ -1,33 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tester_strtrim.c                                   :+:      :+:    :+:   */
+/*   tester_putstr_fd.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/07 16:55:04 by reiascan          #+#    #+#             */
-/*   Updated: 2026/10/08 22:22:21 by reiascan         ###   ########.fr       */
+/*   Created: 2026/10/10 18:04:51 by reiascan          #+#    #+#             */
+/*   Updated: 2026/10/10 18:06:11 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <stdio.h>
-
-int	main(void)
-{
-	char	*str1;
-	char	*combo;
-	char	*str2;
-
-	str1 = "lorem ipsum dolor sit amet";
-	combo = "te";
-	str2  = ft_strtrim(str1, combo);
-
-	printf("String original: %s\n", str1);
-	printf("Conjunto a quitar:  %s\n", combo);
-	if (combo != NULL)
-		printf("Nuevo string: %s\n", str2);
-	else
-		printf("NULL");
-	return (0);
-}
