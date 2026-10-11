@@ -6,7 +6,7 @@
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/10 18:04:53 by reiascan          #+#    #+#             */
-/*   Updated: 2026/10/10 18:05:54 by reiascan         ###   ########.fr       */
+/*   Updated: 2026/10/11 15:42:45 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	int	i;
 
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }

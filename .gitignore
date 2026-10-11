@@ -1,4 +1,6 @@
 *.out
+tester/
+alternative_fts/
 *.pdf
 *.o
 *.a

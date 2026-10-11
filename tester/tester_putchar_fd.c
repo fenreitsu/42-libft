@@ -6,12 +6,13 @@
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/10 16:35:34 by reiascan          #+#    #+#             */
-/*   Updated: 2026/10/10 16:55:20 by reiascan         ###   ########.fr       */
+/*   Updated: 2026/10/11 15:35:10 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <stdio.h>
+#include <fcntl.h>
 
 void test_stdout(void)
 {
