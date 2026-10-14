@@ -6,7 +6,7 @@
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 17:41:52 by reiascan          #+#    #+#             */
-/*   Updated: 2026/10/13 19:51:30 by reiascan         ###   ########.fr       */
+/*   Updated: 2026/10/14 15:57:25 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void)
 	b = 20;
 	c = 30;
 
-	printf("\n========= CASO 1: lista vacía =========\n");
+	printf("\n-------- PRUEBA 1: lista vacía --------n");
 	list = NULL;
 	printf("Antes: list %s NULL\n", list == NULL ? "es" : "NO es");
 
@@ -47,7 +47,7 @@ int	main(void)
 		printf("  list->next    = %s\n",
 			list->next == NULL ? "NULL" : "NO NULL");
 	}
-	printf("\n========= CASO 2: lista con 1 nodo =========\n");
+	printf("\n-------- PRUEBA 2 lista con 1 nodo --------\n");
 	nodo2 = ft_lstnew(&b);
 	if (nodo2 == NULL)
 	{
@@ -61,11 +61,7 @@ int	main(void)
 	printf("  [1] = %d\n", *(int *)list->next->content);
 	printf("  [1]->next = %s\n",
 		list->next->next == NULL ? "NULL" : "NO NULL");
-
-	/* ============================================
-	   CASO 3: lista con dos nodos → add_back añade al final
-	   ============================================ */
-	printf("\n========= CASO 3: lista con 2 nodos =========\n");
+	printf("\n-------- PRUEBA 3lista con 2 nodos --------\n");
 	nodo3 = ft_lstnew(&c);
 	if (nodo3 == NULL)
 	{

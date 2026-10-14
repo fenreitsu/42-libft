@@ -46,6 +46,9 @@ SRC = ft_isalpha.c \
 	ft_lstlast.c \
 	ft_lstadd_back.c \
 	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstiter.c \
+	ft_lstmap.c \
 
 OBJS = $(SRC:.c=.o)
 
@@ -64,7 +67,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-bonus: all
 
 .PHONY: all fclean clean re
