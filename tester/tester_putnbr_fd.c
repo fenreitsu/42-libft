@@ -12,3 +12,24 @@
 
 #include "../libft.h"
 #include <stdio.h>
+#include <limits.h>
+
+int	main(void)
+{
+	printf("0: ");
+	ft_putnbr_fd(0, 1);
+	printf("\n");
+	printf("42: ");
+	ft_putnbr_fd(42, 1);
+	printf("\n");
+	printf("-42: ");
+	ft_putnbr_fd(-42, 1);
+	printf("\n");
+	printf("INT_MAX: ");
+	ft_putnbr_fd(INT_MAX, 1);
+	printf("\n");
+	printf("INT_MIN: ");
+	ft_putnbr_fd(INT_MIN, 1);
+	printf("\n");
+	return (0);
+}
