@@ -6,7 +6,7 @@
 /*   By: reiascan <reiascan@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 12:00:00 by reiascan          #+#    #+#             */
-/*   Updated: 2026/10/15 12:00:00 by reiascan         ###   ########.fr       */
+/*   Updated: 2026/10/23 15:04:50 by reiascan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,23 @@
 #include <string.h>
 
 int	main(void)
+{
+	int		i;
+	char	str[12] = "hola que tal";
+
+	i = 0;
+	ft_bzero(str, 2);
+	printf("Antes: %s\n", str);
+	printf("Despues: \n");
+	while (i <= 11)
+	{
+		printf("Posicion (byte): %i, Caracter: %c\n", i, str[i]);
+		i++;
+	}
+	return (0);
+}
+
+/* int	main(void)
 {
 	char	buf[16];
 	char	ref[16];
@@ -48,4 +65,4 @@ int	main(void)
 	printf("Caso \"12345\" n=3: [%d][%d][%d] y resto = \"%s\"\n",
 		buf[0] == 0, buf[1] == 0, buf[2] == 0, &buf[3]);
 	return (0);
-}
+} */
